@@ -1,0 +1,19 @@
+{
+  "name": "liri",
+  "version": "1.0.0",
+  "description": "Homework 8 liri",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/traut029/liri.git"
+  },
+  "author": "Eric Trautmiller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/traut029/liri/issues"
+  },
+  "homepage": "https://github.com/traut029/liri#readme"
+}
