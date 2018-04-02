@@ -34,11 +34,6 @@ if (process.argv[2] == "do-what-it-says") {
 
         }
     })
-
-
-
-
-
 }
 
 else if (process.argv[2] == "my-tweets") {
@@ -46,11 +41,9 @@ else if (process.argv[2] == "my-tweets") {
 }
 else if (process.argv[2] == "spotify-this-song") {
     spotifyThisSong();
-
 }
 else if (process.argv[2] == "movie-this") {
     movieFunction();
-
 }
 function spotifyThisSong() {
     var songName = ""
@@ -80,11 +73,17 @@ function spotifyThisSong() {
     });
 }
 function tweetFunction() {
-    client.get('favorites/list', function (error, tweets, response) {
-        if (error) throw error;
-        console.log(tweets);  // The favorites. 
-        //console.log(response);  // Raw response object. 
-    });
+    var params = {screen_name: 'Fr1dgeraider'};
+client.get('statuses/user_timeline', params, function(error, tweets, response) {
+  if (!error) {
+      for(var i=0;i<20;i++){
+    console.log("Tweet Number "+(i+1))
+    console.log(tweets[i].text);
+    console.log(tweets[i].created_at);
+    console.log("")
+      }
+  }
+});
 }
 function movieFunction() {
     var movieName = ""
@@ -122,12 +121,6 @@ function movieFunction() {
             console.log("Plot: " + parsedBody.Plot)
             //    * Actors in the movie.
             console.log("Actors: " + parsedBody.Actors)
-
-
-
-
-
-
         }
     })
 }
