@@ -71,13 +71,15 @@ function spotifyThisSong() {
         //Album Name that the song is from
         console.log("Album Name: " + data.tracks.items[0].album.name)
         //append to log.txt
-        fs.appendFile("log.txt", "Artist(s): " + data.tracks.items[0].artists[0].name + "\n" + "Song Name: " + data.tracks.items[0].name + "\n" + "URL: " + data.tracks.items[0].external_urls.spotify + "\n" + "Album Name: " + data.tracks.items[0].album.name + "\n" + "\n", function (error) { })
+        fs.appendFile("log.txt", process.argv[2]+" "+songName+"\n" + "\n"+"Artist(s): " + data.tracks.items[0].artists[0].name + "\n" + "Song Name: " + data.tracks.items[0].name + "\n" + "URL: " + data.tracks.items[0].external_urls.spotify + "\n" + "Album Name: " + data.tracks.items[0].album.name + "\n" + "\n", function (error) { })
     });
 }
 function tweetFunction() {
     var params = { screen_name: 'Fr1dgeraider' };
     client.get('statuses/user_timeline', params, function (error, tweets, response) {
         if (!error) {
+            //append command to log.text
+            fs.appendFile("log.txt", process.argv[2]+"\n" + "\n", function (error) { })
             for (var i = 0; i < 20; i++) {
                 //for better organization in terminal
                 console.log("Tweet Number " + (i + 1))
@@ -100,7 +102,8 @@ function movieFunction() {
     }
     //remove extreneous + at the end
     movieName = movieName.substring(0, movieName.length - 1);
-
+    //var to print in log.txt  
+    var movieName2 = movieName.split('+').join(' ');
     //if no movie data given
     if (movieName == "") {
         movieName = "Mr.+Nobody"
@@ -128,8 +131,9 @@ function movieFunction() {
             console.log("Plot: " + parsedBody.Plot)
             //    * Actors in the movie.
             console.log("Actors: " + parsedBody.Actors)
+           
             //append log.txt
-            fs.appendFile("log.txt", "Movie title: " + parsedBody.Title+"\n"+"Year released: " + parsedBody.Year+"\n"+"IMBD Rating: " + parsedBody.imdbRating+"\n"+"Rotten Tomatoes Rating: " + parsedBody.Ratings[1].Value+"\n"+"Country: " + parsedBody.Country+"\n"+"Language: " + parsedBody.Language+"\n"+"Plot: " + parsedBody.Plot+"\n"+"Actors: " + parsedBody.Actors+"\n"+"\n", function (error) { })
+            fs.appendFile("log.txt", process.argv[2]+" "+movieName2+"\n" + "\n"+"Movie title: " + parsedBody.Title+"\n"+"Year released: " + parsedBody.Year+"\n"+"IMBD Rating: " + parsedBody.imdbRating+"\n"+"Rotten Tomatoes Rating: " + parsedBody.Ratings[1].Value+"\n"+"Country: " + parsedBody.Country+"\n"+"Language: " + parsedBody.Language+"\n"+"Plot: " + parsedBody.Plot+"\n"+"Actors: " + parsedBody.Actors+"\n"+"\n", function (error) { })
         }
     })
 }
