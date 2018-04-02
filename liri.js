@@ -11,9 +11,17 @@ var keys = require("./keys.js");
 var spotify = new Spotify(keys.spotify);
 var client = new Twitter(keys.twitter);
 
+
+//create variable of command given for log.txt
+var commandGiven = "";
+for (var i = 2; i < process.argv.length; i++) {
+    var commandGiven = commandGiven + process.argv[i] + " "
+}
+
 //Main
 if (process.argv[2] == "do-what-it-says") {
-
+    //log command given in log.txt
+    fs.appendFile("log.txt", commandGiven + "\n" + "\n", function (error) { })
     //read random text file
     fs.readFile("random.txt", "utf8", function (error, data) {
 
@@ -35,14 +43,19 @@ if (process.argv[2] == "do-what-it-says") {
         }
     })
 }
-
 else if (process.argv[2] == "my-tweets") {
+    //log command given in log.txt
+    fs.appendFile("log.txt", commandGiven + "\n" + "\n", function (error) { })
     tweetFunction();
 }
 else if (process.argv[2] == "spotify-this-song") {
+    //log command given in log.txt
+    fs.appendFile("log.txt", commandGiven + "\n" + "\n", function (error) { })
     spotifyThisSong();
 }
 else if (process.argv[2] == "movie-this") {
+    //log command given in log.txt
+    fs.appendFile("log.txt", commandGiven + "\n" + "\n", function (error) { })
     movieFunction();
 }
 function spotifyThisSong() {
@@ -71,15 +84,13 @@ function spotifyThisSong() {
         //Album Name that the song is from
         console.log("Album Name: " + data.tracks.items[0].album.name)
         //append to log.txt
-        fs.appendFile("log.txt", process.argv[2]+" "+songName+"\n" + "\n"+"Artist(s): " + data.tracks.items[0].artists[0].name + "\n" + "Song Name: " + data.tracks.items[0].name + "\n" + "URL: " + data.tracks.items[0].external_urls.spotify + "\n" + "Album Name: " + data.tracks.items[0].album.name + "\n" + "\n", function (error) { })
+        fs.appendFile("log.txt", "Artist(s): " + data.tracks.items[0].artists[0].name + "\n" + "Song Name: " + data.tracks.items[0].name + "\n" + "URL: " + data.tracks.items[0].external_urls.spotify + "\n" + "Album Name: " + data.tracks.items[0].album.name + "\n" + "\n", function (error) { })
     });
 }
 function tweetFunction() {
     var params = { screen_name: 'Fr1dgeraider' };
     client.get('statuses/user_timeline', params, function (error, tweets, response) {
         if (!error) {
-            //append command to log.text
-            fs.appendFile("log.txt", process.argv[2]+"\n" + "\n", function (error) { })
             for (var i = 0; i < 20; i++) {
                 //for better organization in terminal
                 console.log("Tweet Number " + (i + 1))
@@ -131,9 +142,9 @@ function movieFunction() {
             console.log("Plot: " + parsedBody.Plot)
             //    * Actors in the movie.
             console.log("Actors: " + parsedBody.Actors)
-           
+
             //append log.txt
-            fs.appendFile("log.txt", process.argv[2]+" "+movieName2+"\n" + "\n"+"Movie title: " + parsedBody.Title+"\n"+"Year released: " + parsedBody.Year+"\n"+"IMBD Rating: " + parsedBody.imdbRating+"\n"+"Rotten Tomatoes Rating: " + parsedBody.Ratings[1].Value+"\n"+"Country: " + parsedBody.Country+"\n"+"Language: " + parsedBody.Language+"\n"+"Plot: " + parsedBody.Plot+"\n"+"Actors: " + parsedBody.Actors+"\n"+"\n", function (error) { })
+            fs.appendFile("log.txt", "Movie title: " + parsedBody.Title + "\n" + "Year released: " + parsedBody.Year + "\n" + "IMBD Rating: " + parsedBody.imdbRating + "\n" + "Rotten Tomatoes Rating: " + parsedBody.Ratings[1].Value + "\n" + "Country: " + parsedBody.Country + "\n" + "Language: " + parsedBody.Language + "\n" + "Plot: " + parsedBody.Plot + "\n" + "Actors: " + parsedBody.Actors + "\n" + "\n", function (error) { })
         }
     })
 }

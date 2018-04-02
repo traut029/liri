@@ -1,22 +1,4 @@
-movie-this guardians of the galaxy
-
-Movie title: Guardians of the Galaxy
-Year released: 2014
-IMBD Rating: 8.1
-Rotten Tomatoes Rating: 91%
-Country: USA
-Language: English
-Plot: A group of intergalactic criminals are forced to work together to stop a fanatical warrior from taking control of the universe.
-Actors: Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diesel
-
-spotify-this-song radioactive 
-
-Artist(s): Imagine Dragons
-Song Name: Radioactive
-URL: https://open.spotify.com/track/4G8gkOterJn0Ywt6uhqbhp
-Album Name: Night Visions
-
-my-tweets
+my-tweets 
 
 Tweet Number 1
 Did you hear about the cheese factory that exploded in France?
@@ -30,17 +12,17 @@ I've just been diagnosed as color blind.
 I know, it really came out of the purple.
 Mon Apr 02 02:18:44 +0000 2018
 
-Tweet Number 3
-Did you hear about the restaurant on the moon?
-
-Great food, no atmosphere.
-Mon Apr 02 02:18:34 +0000 2018
-
 Tweet Number 4
 I hate jokes about German sausage.
 
 They're the wurst.
 Mon Apr 02 02:18:24 +0000 2018
+
+Tweet Number 3
+Did you hear about the restaurant on the moon?
+
+Great food, no atmosphere.
+Mon Apr 02 02:18:34 +0000 2018
 
 Tweet Number 5
 Why did the can-crusher quit his job?
@@ -54,6 +36,12 @@ Why couldn't the bicycle stand up by itself?
 It was too tired.
 Mon Apr 02 02:18:06 +0000 2018
 
+Tweet Number 8
+"I'll call you later."
+
+"Don't call me later, call me dad."
+Mon Apr 02 02:17:50 +0000 2018
+
 Tweet Number 7
 Why did the scarecrow win an award?
 
@@ -64,15 +52,13 @@ Tweet Number 9
 I just got fired from my job at the keyboard factory. They told me I wasn't putting in enough shifts.
 Mon Apr 02 02:17:41 +0000 2018
 
-Tweet Number 8
-"I'll call you later."
-
-"Don't call me later, call me dad."
-Mon Apr 02 02:17:50 +0000 2018
-
 Tweet Number 10
 We'll we'll we'll...if it isn't autocorrect.
 Mon Apr 02 02:17:32 +0000 2018
+
+Tweet Number 12
+The world tongue-twister champion just got arrested. I hear they're gonna give him a really tough sentence.
+Mon Apr 02 02:17:07 +0000 2018
 
 Tweet Number 11
 Q. Which type of vegetable tries to be cool, but is only partly successful at it?
@@ -80,17 +66,13 @@ Q. Which type of vegetable tries to be cool, but is only partly successful at it
 A. The radish.
 Mon Apr 02 02:17:22 +0000 2018
 
-Tweet Number 14
-Where can you find a dog without legs? Wherever you left him.
-Mon Apr 02 02:15:51 +0000 2018
-
 Tweet Number 13
 My friend said nothing rhymes with orange. I said no it doesn't.
 Mon Apr 02 02:16:16 +0000 2018
 
-Tweet Number 15
-Blind people don't skydive because it scares the hell out of their dogs.
-Mon Apr 02 02:15:22 +0000 2018
+Tweet Number 14
+Where can you find a dog without legs? Wherever you left him.
+Mon Apr 02 02:15:51 +0000 2018
 
 Tweet Number 16
 HOLY CRAP THE WORLD IS ON FIRE oh wait I left the heater on
@@ -100,13 +82,13 @@ Tweet Number 17
 I like pie, yes I do, I like pie, HOW ABOUT YOU?
 Mon Apr 02 02:14:05 +0000 2018
 
+Tweet Number 15
+Blind people don't skydive because it scares the hell out of their dogs.
+Mon Apr 02 02:15:22 +0000 2018
+
 Tweet Number 18
 What is up with airline food?
 Mon Apr 02 02:13:37 +0000 2018
-
-Tweet Number 12
-The world tongue-twister champion just got arrested. I hear they're gonna give him a really tough sentence.
-Mon Apr 02 02:17:07 +0000 2018
 
 Tweet Number 19
 Smelling salts are a good way to relieve stress after a long day
@@ -116,7 +98,25 @@ Tweet Number 20
 If I do my homework but no one is around to grade it, does it get an A?
 Mon Apr 02 02:13:00 +0000 2018
 
-spotify-this-song "I Want It That Way" 
+spotify-this-song forget you 
+
+Artist(s): Zara Larsson
+Song Name: Never Forget You
+URL: https://open.spotify.com/track/6hmhG1b4LEyNuashVvuIAo
+Album Name: So Good
+
+movie-this guardians of the galaxy 
+
+Movie title: Guardians of the Galaxy
+Year released: 2014
+IMBD Rating: 8.1
+Rotten Tomatoes Rating: 91%
+Country: USA
+Language: English
+Plot: A group of intergalactic criminals are forced to work together to stop a fanatical warrior from taking control of the universe.
+Actors: Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diesel
+
+do-what-it-says 
 
 Artist(s): Backstreet Boys
 Song Name: I Want It That Way
