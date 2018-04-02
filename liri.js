@@ -16,10 +16,10 @@ if (process.argv[2] == "do-what-it-says") {
 
     //read random text file
     fs.readFile("random.txt", "utf8", function (error, data) {
-       
+
         //Split data into an array divided by the comma
         var dataSplit = data.split(',');
-        
+
         //reassign process.argv to new values so that functions run with this data
         process.argv[2] = dataSplit[0]
         process.argv[3] = dataSplit[1]
@@ -70,21 +70,28 @@ function spotifyThisSong() {
         console.log("URL: " + data.tracks.items[0].external_urls.spotify)
         //Album Name that the song is from
         console.log("Album Name: " + data.tracks.items[0].album.name)
+        //append to log.txt
+        fs.appendFile("log.txt", "Artist(s): " + data.tracks.items[0].artists[0].name + "\n" + "Song Name: " + data.tracks.items[0].name + "\n" + "URL: " + data.tracks.items[0].external_urls.spotify + "\n" + "Album Name: " + data.tracks.items[0].album.name + "\n" + "\n", function (error) { })
     });
 }
 function tweetFunction() {
-    var params = {screen_name: 'Fr1dgeraider'};
-client.get('statuses/user_timeline', params, function(error, tweets, response) {
-  if (!error) {
-      for(var i=0;i<20;i++){
-    console.log("Tweet Number "+(i+1))
-    console.log(tweets[i].text);
-    console.log(tweets[i].created_at);
-    console.log("")
-      }
-  }
-});
+    var params = { screen_name: 'Fr1dgeraider' };
+    client.get('statuses/user_timeline', params, function (error, tweets, response) {
+        if (!error) {
+            for (var i = 0; i < 20; i++) {
+                //for better organization in terminal
+                console.log("Tweet Number " + (i + 1))
+                console.log(tweets[i].text);
+                console.log(tweets[i].created_at);
+                //for nicer spacing in terminal
+                console.log("")
+                //append to log.txt
+                fs.appendFile("log.txt", "Tweet Number " + (i + 1) + "\n" + tweets[i].text + "\n" + tweets[i].created_at + "\n" + "\n", function (error) { })
+            }
+        }
+    });
 }
+
 function movieFunction() {
     var movieName = ""
 
@@ -121,6 +128,8 @@ function movieFunction() {
             console.log("Plot: " + parsedBody.Plot)
             //    * Actors in the movie.
             console.log("Actors: " + parsedBody.Actors)
+            //append log.txt
+            fs.appendFile("log.txt", "Movie title: " + parsedBody.Title+"\n"+"Year released: " + parsedBody.Year+"\n"+"IMBD Rating: " + parsedBody.imdbRating+"\n"+"Rotten Tomatoes Rating: " + parsedBody.Ratings[1].Value+"\n"+"Country: " + parsedBody.Country+"\n"+"Language: " + parsedBody.Language+"\n"+"Plot: " + parsedBody.Plot+"\n"+"Actors: " + parsedBody.Actors+"\n"+"\n", function (error) { })
         }
     })
 }
