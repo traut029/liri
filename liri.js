@@ -91,6 +91,7 @@ function tweetFunction() {
     var params = { screen_name: 'Fr1dgeraider' };
     client.get('statuses/user_timeline', params, function (error, tweets, response) {
         if (!error) {
+            var tweetLog=""
             for (var i = 0; i < 20; i++) {
                 //for better organization in terminal
                 console.log("Tweet Number " + (i + 1))
@@ -99,8 +100,9 @@ function tweetFunction() {
                 //for nicer spacing in terminal
                 console.log("")
                 //append to log.txt
-                fs.appendFile("log.txt", "Tweet Number " + (i + 1) + "\n" + tweets[i].text + "\n" + tweets[i].created_at + "\n" + "\n", function (error) { })
+                tweetLog=tweetLog+"Tweet Number " + (i + 1) + "\n" + tweets[i].text + "\n" + tweets[i].created_at + "\n" + "\n"
             }
+            fs.appendFile("log.txt", tweetLog, function (error) { })
         }
     });
 }
